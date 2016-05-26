@@ -1,0 +1,63 @@
+\documentclass[10pt,draftclsnofoot,onecolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{caption}
+
+% *** GRAPHICS RELATED PACKAGES ***
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  \graphicspath{images/}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+\fi
+
+% @TODO:
+%   - go through and check that writing is in correct tense
+%   - update screenshots
+%   - add content to sections where relevant
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+\pagenumbering{gobble}
+\singlespacing
+\title{Spatial Visualization\\ of Biodiversity}
+
+\author{Ty~Skelton,
+        Jasper~LaFortune,
+        and~Alec~Shields}% <-this % stops a space
+
+% The paper headers
+\markboth{CS 461}%
+{Spring 2016}
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract} % @NOTE: JASPER
+The Department of Integrative Biology at Oregon State has collected a large sample of biodiversity data from various sites in the Southwest United States.
+Handling this data in its raw form requires certain technical knowledge of databases, as well as a bit of patience.
+This presents a problem for biodiversity researchers and Department of Defense land managers, who need to be able to understand and make decisions about this data easily.
+Our team addressed this problem by creating a web interface for spatially visualizing this data.
+We enabled users to easily display useful graphs and maps about areas and species of interest, putting the information they care about most at their fingertips.
+
+The Department of Defense made an investment in collecting all these samples so that it could better manage its land.
+However, extracting meaning from that information is challenging for land managers and researchers alike.
+Any good solution to this problem would allow users to easily access the information that is important to them.
+Our solution provides an interface that allows users to select information of interest and see it in map and graph form.
+Passerby at Expo will be invited to interact with our system and discover meaningful biodiversity patterns for themselves.
+Oregon State biodiversity researchers have indicated that our product meets their needs.
+
+\end{abstract}
+\IEEEpeerreviewmaketitle
+
+\newpage
+\pagenumbering{arabic}
+% initial
+\end{document}
