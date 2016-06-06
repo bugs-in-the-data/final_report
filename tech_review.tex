@@ -1,0 +1,289 @@
+% Your original design document. Also, a discussion of what had to change over the course the year.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Relational Database}
+
+\subsubsection{MySQL}
+MySQL is an open-source relational database management system (RDBMS). 
+It is the most widely used open-source client-server model RDBMS. 
+The source code is available under the GNU General Public License. 
+The members of our team have the most experience using this database technology and it’s quite easy to use, which means the initial learning curve will be quite low. 
+MySQL is also compatible with almost every operating system, which makes it quite portable in the event of an environment change. 
+
+While the benefits to using MySQL appear to be substantial, members of the tech community have voiced various complaints. 
+Among these are issues with scalability, continuation of development, and limitations. 
+The scalability of MySQL seems to take a hit with increase write/read ratio. 
+This isn’t enough to steer large companies and start-ups from using this technology, so we will take that with a grain of salt. 
+The lagging continuation of development and limitations stems from an issue with it’s duality of being open-source and owned by Oracle. 
+The code base as stagnated slightly and as a result MySQL hasn’t grown much for some time. 
+This isn’t an immediate issue for our team, however, because the features it does have are exactly what we need. 
+We will still compare this tool against the other potential database technologies to make sure we make the right choice. 
+
+\subsubsection{Postgres}
+Postgres is also an open-source database technology and is an object-relational database management system (ORDBMS). 
+Unlike MySQL, the source code is available only under the PostgreSQL License. 
+No members of our team have used this technology yet, but from skimming the documentation it does not look too foreign and could most likely be learned while developing the site. 
+Postgres operations have been said to be faster than that of MySQL.
+
+While Postgres can be faster at times and scale better than MySQL when using it concurrently, it still has its disadvantages. 
+When executing many read-heavy operations, Postgres can be overkill and actually less performant than MySQL. 
+Postgres has a strong community behind it, but it’s not as large as MySQL and is far less popular. 
+
+\subsubsection{MongoDB}
+MongoDB is also an open-source database, but rather than being a variation of a RDBMS database it’s a document-oriented database. 
+Document-oriented databases are also known as ‘NoSQL’ databases, which casts aside the traditional relational-database structures supported by MySQL and Postgres and insteads supports JSON-esque documents (called BSON). 
+MongoDB is available under the GNU Affero General Public License and the Apache License. 
+If implemented correctly using the document format, MongoDB can be much faster than it’s RDBMS counterparts. 
+The most advertised benefit to using a NoSQL database like MongoDB is the fact that it is very flexible, due to the fact any entity can have any attributes. 
+
+Being flexible is a very nice feature for a database technology, especially when you’re unsure of the data types coming in. 
+However, we have a fairly static data pool already and we know exactly where things will be and the structure probably will never change. 
+This means that MongoDB might be fun to consider if the performance boost outweighs the benefits of the other database technologies, but it’s probably not the right tool for the job. 
+
+\subsubsection{MariaDB}
+MariaDB is a fork off of the MySQL database. 
+The fork off of the major code repository was in response to the Oracle acquisition. 
+MariaDB was designed for ‘drop-in’ compatibility when replacing MySQL in existing systems. 
+It is almost identical to MySQL except for a few minor differences. 
+The most prominent of these is the fact that it’s got a larger open-source community behind it. 
+Secondly, it requires a bit more memory due to it’s default enabling of the Aria storage engine that handles internal temporary tables. 
+Outside of those, the differences are very technical and minor. 
+
+\subsubsection{Selection}
+After careful consideration, we’ve chosen MySQL as our database technology for this project. 
+It’s offers the same level of verbosity as the rest of the tools, while being supported in an open-source and proprietary context. 
+The relational structure of MySQL caters to our data set and will be easy to manipulate and query. 
+MySQL’s portability across all major operating systems is very enticing and will prove to be very helpful in the event that we have to change hosting services or move it to a remote server. 
+Finally, our teams base familiarity with the tool was a convenient plus and will ideally remove whatever potential overhead for learning a database tool during our development. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Backend Web Framework}
+
+\subsubsection{Django}
+Django is a free and open-source web framework written in Python. 
+It’s major design philosophy is that you should be able to focus on developing your application without needing to focus on the intimate details. 
+It seeks to create this environment by offering a clean and easy to use framework with various components encapsulate the different functionalities that you need to run a web application. 
+It comes out of the box with various components that make it simple to start working on your application right away such as: a standalone web server for development, an interface for administration, and built-in protection from various kinds of web attacks. 
+These are only part of the default modules, there are many third-party packages that can be plugged into Django that add even more powerful features such as site-wide search or content management. 
+Overall, the framework seems to be about taking your mind of the web side of things so that you can focus on making your application.
+
+\subsubsection{Symfony}
+Symfony is a free PHP web application framework. 
+It is focused on creating a platform that can be set up easily for a small application but is robust enough to support large and complex applications as well. 
+It also seeks to give developers full control over the configuration and customization of their project. 
+Another principle it operates on is DRY, Don’t Repeat Yourself, and it implements this by the way of bundles. 
+Everything in Symfony is wrapped in a bundle that can be reused in other applications. 
+For instance if you make everything you need to interact with a certain database you can keep that in its own bundle that you could use in two different applications that needed that database. 
+Even the core of symfony is essentially a collection of bundles that you can mix, match, and modify as you see fit. 
+There is also a large and active community of developers creating and collaborating on open source bundles. 
+These can greatly reduce development time on a project because you often don’t have to create generic functionality from scratch.
+
+\subsubsection{Laravel}
+Laravel is a free and open source PHP web application framework. 
+Similar to Symfony is it based on a modular package based system. 
+In fact, Laravel has a very similar approach to Symfony, it uses many of the same tools and technologies and even uses parts of symfony itself. 
+ Laravel differentiates itself from Symfony in two major ways: being very simple and easy to setup and the focus on elegant and clear syntax. 
+ Even the Symfony website talks about how Laravel takes the pain out of common tasks associated with web development. 
+Laravel is in my mind the PHP equivalent of Django in that it seeks to create an elegant and simple way to create web application without having to deal with the dirty details.
+
+\subsubsection{Selection}
+We have decided to use Django for our project. 
+Even though our group members have experience using the other two frameworks, we have gone with Django for several compelling reasons. 
+The operating system was a significant factor. 
+Python is a very clean and elegant language that had thought and foresight put into its design. 
+PHP, on the other hand, has somewhat of a reputation as a language that it very ugly, messy, and unguided. 
+ Cleanliness is not the other reason for preferring Python, though. 
+ Many of our mathematical and statistical modules will be in Python so it will be preferable to work in the same language as much as we can. 
+ Another factor is the ease of starting a project with Django. 
+ It is simply a handful of commands and you have your fresh project ready with a development webserver all set up. 
+ With Symfony setup can be a long arduous process as you set up all the individual pieces and try to understand how to get them all to work together properly. 
+ Symfony definitely offers more customization and power, but our application is small project that won’t need to take advantage of that power. 
+ In the end it was closest between Django and Laravel but Django wins due to being Python instead of PHP.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Numerical Analysis}
+
+\subsubsection{MATLAB}
+MATLAB deserves to be mentioned here, as it is the most commonly used scientific computing language. 
+It provides a tremendous amount of functionality for scientific computing needs. 
+If the numerical analysis portion of our project were completely standalone, MATLAB would be an excellent choice. 
+However, we can’t run it on a backend server, especially one that talks to our web framework.
+
+\subsubsection{Numpy/Scipy}
+Numerical Python, or NumPy, combined with Scientific Python, or SciPy, is the authoritative set of Python packages for scientific computing. 
+NumPy is organized around the ndarray object, which is essentially a more Pythonic version of an array. 
+They are distinct from Python lists in that they do not hold arbitrary objects (unless you explicitly ask them to, in which case you are probably using them wrong). 
+While Python lists make no assumptions about the homogeneity of the data they are storing, NumPy ndarrays optimize based on the assumptions that each entry contains the same fields of the same types, and the entries are organized into a square n-dimensional matrix. 
+These simplifications turn out to cover the vast majority of scientific applications, and allow NumPy ndarray objects to use C structures under the hood. 
+This makes them efficient in memory usage and fast in processing compared to plain Python objects. 
+On top of the ndarray object, the NumPy and SciPy modules provide functions for many common mathematical, statistical, and scientific routines. 
+The libraries cover everything from element-wise arithmetic to linear algebra in single function calls, such that users will rarely have to explicitly iterate through an ndarray object element by element. 
+More advanced specific capabilities can be offered by modules such as OpenCV, but many of these make use of NumPy ndarrays. 
+Finally, NumPy and SciPy have excellent documentation and support. 
+In short, NumPy and SciPy are Python’s answer to MATLAB. 
+They should be more than adequate for our project.
+
+\subsubsection{SciRuby}
+SciRuby happened because some people went, “Hey, where’s the scientific computing for Ruby?” and started a GitHub repo. 
+The project is still young, but provides an impressive smattering of scientific computing tools. 
+In addition to providing most of the same basic array manipulation functionality as NumPy and MATLAB, SciRuby has built in functionality for some advanced routines, including several machine learning methods. 
+It even includes some visualization tools, which would be of use to us if it were on the frontend. 
+However, SciRuby has scattered, inconsistent documentation and support. 
+Many of the modules it offers are not currently stable. 
+One cannot simply assume that a SciRuby package just works.
+
+\subsubsection{PEAR}
+PEAR, or the PHP Extension and Application Repository, is a collection of PHP snippets that developers have built and which seem useful. 
+It includes everything from user authentication to some scientific computing routines. 
+Each extension must be found and installed separately, and there is not necessarily any consistency between extensions. 
+It is about all PHP has to offer for numerical analysis.
+
+\subsubsection{Selection}
+We have chosen to use NumPy/SciPy for the numerical analysis piece of our project. 
+This option should provide us with the greatest ease of development for several reasons. 
+First, NumPy and SciPy are consistent. 
+They are well-documented, well-tested, and well-supported. 
+In general, if think NumPy should be able to do it, it already does, and one can guess what the function is called and how to use it. 
+If not, it can reliably be found in the documentation. 
+The only other technology which provides this ease of development is MATLAB, which is not suitable for a backend server. 
+NumPy and SciPy also enjoy the advantage of being able to talk easily with our website backend, which will use Django.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mapping API}
+
+\subsubsection{Google Maps}
+The Google Maps API provides all the functionality of the Google Maps app as an API that is (pretty much) free to developers. 
+This means that developers can, for example, easily and simply create a map, scale and transform it, place markers on it, and make those markers display further information. 
+Common use cases such as these are simple to implement. 
+Furthermore, they are simple and easy for users to understand. 
+Customization, for both developers and users, is a greater challenge. 
+The Google Maps API follows Google’s principles in general: for 99\% of use cases, it is simple, easy, and elegant, and for the other 1\%, it is useless.
+
+\subsubsection{ArcGIS}
+ArcGIS is a powerful mapping tool commonly used for geospatial applications and research. 
+It provides a JavaScript API for developers. 
+The API is well-documented and includes understandable code samples. 
+Advanced tools for visualization and analysis are built in, as well as nice tools for information visualization in separate windows or panels. 
+It even includes a tool for visualizing watersheds, which could be of direct use to our application, and which would be very challenging to implement ourselves. 
+It does require a license, but that license is available free to Oregon State faculty and students. 
+
+\subsubsection{CartoDB}
+CartoDB is a powerful map-based visualization tool, heavily centered around its JavaScript API. 
+The API is not as well-documented as that of ArcGIS, but it does include useful sample code. 
+It provides tools for viewing maps and visualizing and analyzing data. 
+It is designed for big datasets. 
+CartoDB provides similar functionality base functionality to ArcGIS, but with less advanced functionality. 
+The free plan is reasonable, but premium plans are expensive, and do not come with Oregon State tuition.
+
+\subsubsection{Selection}
+We have decided to use ArcGIS for our mapping API. 
+It implements many of the features we already know we want, which sets it apart from the Google Maps API. 
+Additionally, we will already have the license to use it at no financial cost, which sets it apart from the CartoDB API. 
+Furthermore, ArcGIS will be familiar to researchers in the field, which is important for our project. 
+Finally, the API is well-documented and easy to navigate, which will improve ease of development.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Graphing Utility}
+\subsubsection{D3}
+D3 allows you to bind arbitrary data to a Document Object Model (DOM), and then apply data-driven transformations to the document. 
+D3 provides powerful data-driven visualization. 
+This means that we can perform minor statistical manipulation to the data pulled from the database in real-time via a view on our website. 
+This is incredibly useful, because users on the site will be able to make selections on what data they’re interested in and the analysis should change with those selections. 
+D3 uses HTML, SVG, and CSS. 
+This technology is able to be implemented with any web framework and only requires either a reference to a remote CDN or a local install of the source files. 
+D3 can also work with any data size, even performing while in the Gigabits range.
+The main issue with D3 is it’s not al charting tool. 
+This means that while you’re able to perform data manipulation and graph out a trend, you won’t be able to provide quantitative metrics like bar charts and pie charts. 
+This could be solved, however, by co-implementing it with C3 (a similar, but charting-focused tool).
+
+\subsubsection{C3}
+C3 is based on the D3 codebase. 
+whereas D3 is primarily a plotting tool, C3 is a charting tool. 
+Developers tend to use one or the other and then compensating for their differences. 
+C3 proves to be very customizable with the ability to provide custom classes to all chart types. 
+Where D3 shines in power C3 provides ease and is much lighter. 
+Users interacting with a C3 chart can easily show/hide series, update data, select data points, and focus on series. 
+This is unprecedented in other charting libraries and makes for a very smooth user experience. 
+The built-in charts are very aesthetically pleasing and have extensive properties available for customizing their format.
+D3 has been out for several years now, but C3 has only just surfaced. 
+Consequently, C3 is fairly lacking in documentation. 
+One or two of our team members are already semi-familiar with this tool and can implement basic graphs, but there will be a learning curve during development. 
+Since C3 is based off of D3, D3 is much more powerful with the amount of functionality it offers. 
+Even though we are comparing these two technologies for use over the other, there is a possibility we could try to implement both if the situation calls for it.
+
+\subsubsection{Google Charts}
+Google Charts is an API created by Google for creating charts in HTML and SVG through javascript. 
+It generates a static PNG image of the chart after data processing and embeds it in the web view. 
+This api is very verbose and supports many different kinds of charts- including unconventional ones like bubble charts,diff charts, gantt charts, geo charts, sankey diagrams, and tree map charts. 
+The DataTable class that populates the charts can be populated from a web page, database, or any data provider supporting the Chart Tools Datasource Protocol (SQL-like language implemented by Google sheets, Google Fusion, and even Salesforce.) Google charts offers more functionality than C3 and is simpler to learn/implement than D3. 
+
+Despite being easier to use than D3, it actually is less customizable. 
+D3 provides much more in the ways of control for generating plots and charts. 
+Google charts also do not support as much data as C3 and D3 can handle. 
+With this technology, exporting to a png file is very easy, but the graph view on the web page is hardly as dynamic and interactable as C3 or D3. 
+This is a major problem when catering to a user group that needs to do real time sorting and filtering on data sets, like ours. 
+
+\subsubsection{Selection}
+We selected C3 for this tool, because it’s the most aesthetically pleasing of the charting tools. 
+It has all the graphs that we are interested in displaying for our primary objective and is easy to implement. 
+While D3 and Google Charts are more powerful, they are also more time consuming for the same result. 
+C3 provides quick access to the exact features we need, all while being simple in usage. 
+It’s important to us that we are able to achieve the desired look while providing meaningful metrics along with some level of user-interaction and this technology satisfies all those conditions the most completely. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Frontend Web Framework}
+
+\subsubsection{Bootstrap}
+Bootstrap is a free and open-source front-end framework for creating web applications. 
+It is basically a collection of a bunch of different tools and assets to quickly and simply create the application’s interface. 
+The assets it contains are things like forms, button, navbars, and similar css that gives your website a clean and professional look. 
+It also contains a bunch of javascript components to handle things such as dropdowns, tabs and modals. 
+Basically, these breathe life into your application making it more dynamic and interactive. 
+Another excellent part of Bootstrap is its grid system that makes creating the layout of the website very clean and intuitive. 
+Bootstrap is an industry standard for a reason, it makes creating a professional looking website as easy as including some dependencies.
+
+\subsubsection{Materialize}
+Materialize is a CSS framework that seeks to implement Google’s Material Design. 
+Material Design is a design language that seeks to create a unified user experience using the metaphor of material, bold graphics, and meaningful motion. 
+Basically, Material Design links the paper and ink roots to our current technology and design in order to create a striking and clean interface. 
+On terms of functionality, Materialize offer similar functionality to Bootstrap but following Material Design guidelines that Google has laid out. 
+Due to this is has slightly less functionality that Bootstrap but it has the same core functionality.
+
+\subsubsection{React}
+React is an open-source Javascript library used to create user interfaces. 
+It specifically focuses on tackling single-page applications. 
+Its development is led by Facebook as well as the community that uses the library. 
+Its strength is in large applications where the data changes frequently. 
+It makes sense then that companies such as Facebook and Instagram have a hand in its development. 
+React is built on the idea of simplicity and reusability, you tell it how you want something to look and it updates your application as the data changes. 
+Everything built with React is a component. 
+This means that by design everything produced in React is separated, reusable, and testable. 
+While the other frameworks are built around the idea of various kinds of websites with branching paths and many pages, React does one thing but does it well: offer a clean and intuitive way to display that changes in a complex application on a single page.
+
+\subsubsection{Selection}
+We have selected Bootstrap for our project. 
+After researching React it was clear that it wasn’t what we needed for our project. 
+The data in our project is not changing. 
+It is also a small project so it likely won’t benefit from all the features React is focused on. 
+So the main options we were looking at were Bootstrap and Materialize. 
+Functionality-wise these are very similar to each other. 
+They both offer a grid system, css elements, and javascript components. 
+The deciding factor is what kind of design we want for project. 
+Material Design is focused on consistent user experience across different devices which isn’t really a concern for our project. 
+This isn’t a commercial app that needs a fancy or elegant user interface, we need an interface that is clean and displays our application’s information in a manner that is easy to read and use. 
+For this reason Bootstrap is a good choice. 
+It is standard and offers a simple interface that will meet our needs and present a good stage for our data.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Changes}
+The decisions we made in our technology review have remained fairly constant.
+There are only two significant changes.
+First, we did not end up needing to use NumPy/SciPy, as our numerical analysis needs were less than we initially imagined.
+Second, we additionally used a Javascript library called FancyTree for the hierarchies in the Filter View.

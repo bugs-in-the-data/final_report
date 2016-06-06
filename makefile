@@ -17,6 +17,7 @@ clean:
 	rm -f *.ps
 	rm -f *.toc
 	rm -f *.bz2
+	rm -f *.out
 
 tar:
 	tar cvjf spring_progress_report_team23.tar.bz2 IEEEtran.cls makefile $(doc).tex
