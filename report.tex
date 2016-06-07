@@ -2,6 +2,15 @@
 
 \usepackage{setspace}
 \usepackage{caption}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 % *** GRAPHICS RELATED PACKAGES ***
 \ifCLASSINFOpdf
@@ -64,29 +73,40 @@ Oregon State biodiversity researchers have indicated that our product meets thei
 % Who are the members of your team?
 % What were their roles?
 % What was the role of the client(s)? (I.e., did they supervise only, or did they participate in doing development)
+\input{introduction.tex}
 
+\newpage
 \section{Original Requirements} % @TODO: Ty
 % This needs to be the original document, showing what you thought, at the time, was the project definition.
 % This needs to include the original Gantt chart.
 
+\newpage
 \section{Changes to Original Requirements} % @TODO: Alex
 % What new requirements were added? What existing requirements were changed? What existing requirements were deleted? Why?
 % Use the following table format:
 % What was the final Gantt chart? @TODO: Ty
 
+\newpage
 \section{Original Design Document} % @TODO: Alex
 % Your original design document. Also, a discussion of what had to change over the course the year.
 
+\newpage
 \section{Tech Review} % @TODO: Jasper
 % Your original design document. Also, a discussion of what had to change over the course the year.
+Our original Technology Review is included below, along with notes about changes made over the course of the year.
+\input{tech_review.tex}
 
+\newpage
 \section{Weekly Blog Posts} % @TODO: Ty, Alex, Jasper
 % Your team weekly blog posts. These should be formatted nicely and clearly distinct from one another.
+\input{weekly_blog_posts.tex}
 
+\newpage
 \section{Final Poster} % @TODO: Alex
 % Your final poster, scaled and color-printed on a single 8.5"x11" paper. If you don't have access to a color printer, I will print it for you. Let me know.
 
-\section{Project documentation} % @TODO: Ty
+\newpage
+\section{Project Documentation} % @TODO: Ty
 % How does your project work? @TODO: Jasper
 %   What is its structure?
 %   What is its Theory of Operation?
@@ -95,13 +115,16 @@ Oregon State biodiversity researchers have indicated that our product meets thei
 % How does one run it?
 % Are there any special hardware, OS, or runtime requirements to run your software?
 % Any user guides, API documentation, etc.
+\input{project_documentation.tex}
 
+\newpage
 \section{New Technology} % @TODO: Alex
 % What web sites were helpful? (Listed in order of helpfulness.)
 % What, if any, reference books really helped?
 % Were there any people on campus that were really helpful?
 
-\section{What did we learn} % @TODO: Ty, Alex, Jasper
+\newpage
+\section{What We Learned} % @TODO: Ty, Alex, Jasper
 % What did you learn from all this? One per team member.
 %   What technical information did you learn?
 %   What non-technical information did you learn?
@@ -110,4 +133,11 @@ Oregon State biodiversity researchers have indicated that our product meets thei
 %   What have you learned about working in teams?
 %   If you could do it all over, what would you do differently?
 % Be honest here -- no B.S.
+\subsection{Jasper}
+\input{jasper_learned.tex}
+
+\subsection{Alex}
+
+\subsection{Ty}
+
 \end{document}

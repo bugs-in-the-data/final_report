@@ -1,0 +1,35 @@
+% @TODO: Ty
+% How does your project work? @TODO: Jasper
+%   What is its structure?
+%   What is its Theory of Operation?
+%   Block and flow diagrams are good here.
+% How does one install your software, if any?
+% How does one run it?
+% Are there any special hardware, OS, or runtime requirements to run your software?
+% Any user guides, API documentation, etc.
+
+\subsection{How it works}
+Our system consists of three main views.
+The Filter View allows the user to select information of interest.
+The Map View displays selected information on a map.
+The Graph View shows graphs of the selected information.
+When the user selects information of interest in the Filter View, the website posts these parameters to the server, as seen in Figure~\ref{fig:dataflow}.
+A Django script on the server uses these parameters to form a database query.
+The MySQL database returns the requested data to the server, which formats the data into the Map and Graph Views.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{images/DataflowDiagram.png}
+\captionsetup{justification=centering}
+\caption{
+  Dataflow diagram.
+  The server forms filter parameters into a database request, the results of which are passed to the frontend views.
+}
+\label{fig:dataflow}
+\end{figure}
+
+\subsection{How to install it}
+
+\subsection{How to run it}
+
+\subsection{System requirements}
