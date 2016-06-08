@@ -1,13 +1,3 @@
-% @TODO: Ty
-% How does your project work? @TODO: Jasper
-%   What is its structure?
-%   What is its Theory of Operation?
-%   Block and flow diagrams are good here.
-% How does one install your software, if any?
-% How does one run it?
-% Are there any special hardware, OS, or runtime requirements to run your software?
-% Any user guides, API documentation, etc.
-
 \subsection{How it works}
 Our system consists of three main views.
 The Filter View allows the user to select information of interest.
@@ -19,7 +9,7 @@ The MySQL database returns the requested data to the server, which formats the d
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.75\textwidth]{images/DataflowDiagram.png}
+\includegraphics[width=0.75\textwidth]{DataflowDiagram.png}
 \captionsetup{justification=centering}
 \caption{
   Dataflow diagram.
@@ -29,7 +19,26 @@ The MySQL database returns the requested data to the server, which formats the d
 \end{figure}
 
 \subsection{How to install it}
+Installing our web app is actually pretty simple:
+\begin{list}{-}{}
+\item Install the \texttt{mod\_wsgi} package for Apache, which is a module that implements a compliant interface for hosting Python based web apps.
+\item Install the Python package manager, Pip.
+\item Using Pip, install the framework Django: \texttt{pip install Django}
+\item Clone the code repository and install MySQL.
+\item Finally, at the command-line run \texttt{./manage.py make migrations; ./manage.py migrate} to generate database tables based on our ORM.
+\end{list}
 
 \subsection{How to run it}
+Running the server at the command line is as easy as typing \texttt{./manage.py runserver}.
+To deploy it via apache, simply configure apache to point to the project folder, the \texttt{mod\_wsgi} installation, and the Python binary.
+This will host it statically and will run the necessary scripts on every load of the page.
 
 \subsection{System requirements}
+As hinted at in the previous sections, there are certain technologies which are required to run this web app:
+\begin{list}{-}{}
+\item MySQL server
+\item Django v1.6.11
+\item Python 2 or higher
+\item Apache
+\item mod\_wsgi
+\end{list}
