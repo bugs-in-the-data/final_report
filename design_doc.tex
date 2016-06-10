@@ -104,7 +104,7 @@ The back-end system will be written in a Python framework called Django. This ba
 	\includegraphics[width=0.95\textwidth]{DataFlowDiagram.png}
 	\captionsetup{justification=centering}
 	\caption{
-		Gantt chart of schedule
+		Diagram of data flow
 	}
 	\label{fig:data_flow}
 \end{figure}
@@ -210,5 +210,37 @@ As an example, the user below clicked on the drilldowns for Arthropoda, Insecta,
 \end{figure}
 
 \subsection{Changes}
+There were many changes in our design over the year as we refined the idea of our project and especially as we began development.
+These range from small changes or additions to complete rethinking of sections of our design.
+Our original plan did a good job of giving us a rough guideline to work with as we began our project.
 
+The changes we had to our database were mostly refactoring.
+Our original idea had four objects in our database, samples, sample groups, sites, and species.
+The model we ended up with moved the data from species into samples and renamed samples and sample groups into subsamples and samples respectively.
+This was a result of discussing with our client and gaining a better idea of the data.
+Later on we found that we needed to append latitude and longitude coordinates to our site object for mapping.
+
+While the overall flow of using our application didn't change, the overall user interface of our application did.
+Our original plan was to have different sections of our application move around and change in size.
+We found that this would be to complicated and opted for static, pre-determined sizes for each portion of the interface.
+
+The design of the map is probably what changed the most throughout development.
+At the beginning we pictured using the map as one of the main ways to select points aside from the filter.
+However, we found that this wouldn't work well in our application for a few reasons.
+Firstly, the points were incredibly clustered which would make it difficult to select the points you wanted with accuracy.
+It would have also made our site a lot more complicated to have to update the map/filter as the other changed.
+Additionally, as we progressed in the project we realized that using the map for selection doesn't help us meet our design goals.
+Instead we decided that we would use the map in order to give the context of the data the user had selected.
+Our final version of the map shows the user the location of every sample that the user has in their current filter.
+The points of the map are slightly transparent which allows the user to tell when many samples are in the same location.
+We also added tooltip describing the sample on hover so the user can learn more about specific samples.
+
+The statistics view didn't change very much throughout our project, it just got more well defined.
+At the beginning our clients knew that they wanted to display several graphs about the selected data but they weren't sure what exactly they wanted to display.
+After many meetings with our client we finally nailed down the final graphs, a stacked bar chart of unique species, a pie chart of unique species, and a line graph of sampling effort over time.
+
+The filter view may be the part of our project that changed the least.
+In the final version radio button were used instead of checkboxes as in the original design.
+This was to make it simpler to use and compute.
+We also added a filter that allows the user to show data only from a certain combination of seasons.
 
